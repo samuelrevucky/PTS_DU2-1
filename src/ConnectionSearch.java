@@ -1,21 +1,27 @@
+import datatypes.ConnectionData;
+import datatypes.LineName;
+import datatypes.StopName;
+import datatypes.Time;
+import interfaces.LinesInterface;
+
 import java.util.ArrayList;
 
 public class ConnectionSearch {
-    private Lines lines;
-    private Stops stops;
+    private final Lines lines;
+    private final Stops stops;
 
-    public ConnectionSearch() {
-
+    public ConnectionSearch(Lines lines, Stops stops) {
+        this.lines = lines;
+        this.stops = stops;
     }
 
     public ConnectionData search(StopName from, StopName to, Time time) {
         stops.setStartingStop(from, time);
-        ArrayList<LineName> linesTODO = stops.getLines(from);
+        ArrayList<LineName> linesFrom = stops.getLines(from);
 
-        lines.updateReachable(linesTODO, from, time);
+        lines.updateReachable(linesFrom, from, time);
 
         stops.earliestReachableStopAfter(time);
-
         return null;
     }
 }
