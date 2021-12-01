@@ -1,27 +1,36 @@
+import datatypes.LineName;
+import datatypes.Pair;
+import datatypes.StopName;
+import datatypes.Time;
+import interfaces.StopsInterface;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Optional;
 
-public class Stops {
+public class Stops implements StopsInterface {
+    HashMap<StopName, Stop> stops;
 
-    public Stops() {
-
+    public Stops(HashMap<StopName, Stop> stops) {
+        this.stops = stops;
     }
 
-    public Optional<HashMap<StopName, Time>> earliestReachableStopAfter(Time time) {
+    @Override
+    public Optional<Pair<StopName, Time>> earliestReachableStopAfter(Time time) {
         return Optional.empty();
     }
 
+    @Override
     public void setStartingStop(StopName name, Time time) {
-        Stop stop = new Stop(name);
-        stop.updateReachableAt(time, Optional.empty());
+        stops.get(name).updateReachableAt(time, Optional.empty());
     }
 
+    @Override
     public ArrayList<LineName> getLines(StopName name) {
-        Stop stop = new Stop(name);
-        return stop.getLines();
+        return stops.get(name).getLines();
     }
 
+    @Override
     public HashMap<Time, LineName> getReachableAt(StopName stop) {
         return null;
     }
