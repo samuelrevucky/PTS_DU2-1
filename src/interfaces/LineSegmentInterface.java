@@ -1,14 +1,14 @@
 package interfaces;
 
-import datatypes.Pair;
 import datatypes.StopName;
 import datatypes.Time;
-import datatypes.Tuple;
+import tuples.Pair;
+import tuples.Triplet;
 
 public interface LineSegmentInterface {
     Pair<Time, StopName> nextStop(Time startTime);
 
-    Tuple<Time, StopName, Boolean> nextStopAndUpdateReachable(Time startTime);
+    Triplet<Time, StopName, Boolean> nextStopAndUpdateReachable(Time startTime);
 
     void incrementCapacity(Time startTime);
 }

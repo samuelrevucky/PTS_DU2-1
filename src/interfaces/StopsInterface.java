@@ -1,12 +1,11 @@
 package interfaces;
 
 import datatypes.LineName;
-import datatypes.Pair;
 import datatypes.StopName;
 import datatypes.Time;
+import tuples.Pair;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Optional;
 
 public interface StopsInterface {
@@ -16,5 +15,7 @@ public interface StopsInterface {
 
     ArrayList<LineName> getLines(StopName name);
 
-    HashMap<Time, LineName> getReachableAt(StopName stop);
+    Pair<Time, LineName> getReachableAt(StopName stop);
+
+    void clean();
 }
