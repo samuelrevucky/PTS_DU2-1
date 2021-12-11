@@ -4,10 +4,10 @@ import datatypes.LineName;
 import datatypes.StopName;
 import datatypes.Time;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface LinesInterface {
-    void updateReachable(ArrayList<LineName> names, StopName stop, Time time);
+    void updateReachable(List<LineName> names, StopName stop, Time time);
 
     StopName updateCapacityAndGetPreviousStop(LineName line, StopName stop, Time time);
 

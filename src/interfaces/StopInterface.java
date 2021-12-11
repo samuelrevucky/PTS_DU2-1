@@ -5,9 +5,7 @@ import datatypes.StopName;
 import datatypes.Time;
 import tuples.Pair;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Optional;
+import java.util.List;
 
 public interface StopInterface {
     void updateReachableAt(Time time, LineName lineName);
@@ -16,5 +14,5 @@ public interface StopInterface {
 
     Pair<Time, LineName> getReachableAt();
 
-    ArrayList<LineName> getLines();
+    List<LineName> getLines();
 }

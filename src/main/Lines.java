@@ -1,20 +1,24 @@
+package main;
+
 import datatypes.LineName;
 import datatypes.StopName;
 import datatypes.Time;
+import interfaces.FactoryInterface;
 import interfaces.LinesInterface;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Lines implements LinesInterface {
-    HashMap<LineName, Line> lines;
+    private final HashMap<LineName, Line> lines = new HashMap<>();
+    private final FactoryInterface factory;
 
-    public Lines(HashMap<LineName, Line> lines) {
-        this.lines = lines;
+    public Lines(FactoryInterface factory) {
+        this.factory = factory;
     }
 
     @Override
-    public void updateReachable(ArrayList<LineName> names, StopName stop, Time time) {
+    public void updateReachable(List<LineName> names, StopName stop, Time time) {
         for (LineName name : names) {
             lines.get(name).updateReachable(time, stop);
         }
@@ -22,11 +26,11 @@ public class Lines implements LinesInterface {
 
     @Override
     public StopName updateCapacityAndGetPreviousStop(LineName line, StopName stop, Time time) {
-        return null;
+        return lines.get(line).updateCapacityAndGetPreviousStop(stop, time);
     }
 
     @Override
     public void clean() {
-        // TODO: Implement clean method
+        lines.clear();
     }
 }

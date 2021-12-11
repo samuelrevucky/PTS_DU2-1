@@ -1,3 +1,5 @@
+package main;
+
 import datatypes.LineName;
 import datatypes.StopName;
 import datatypes.Time;
@@ -26,8 +28,8 @@ public class Line implements LineInterface {
     }
 
     @Override
-    public void updateCapacityAndGetPreviousStop(StopName stop, Time time) {
-
+    public StopName updateCapacityAndGetPreviousStop(StopName stop, Time time) {
+        return null;
     }
 
 }

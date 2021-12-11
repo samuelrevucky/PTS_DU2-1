@@ -5,7 +5,7 @@ import datatypes.StopName;
 import datatypes.Time;
 import tuples.Pair;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public interface StopsInterface {
@@ -13,7 +13,7 @@ public interface StopsInterface {
 
     void setStartingStop(StopName name, Time time);
 
-    ArrayList<LineName> getLines(StopName name);
+    List<LineName> getLines(StopName name);
 
     Pair<Time, LineName> getReachableAt(StopName stop);
 
