@@ -2,12 +2,12 @@ package tuples;
 
 import java.util.Objects;
 
-public class Triplet<R, S, T> {
+public class Triple<R, S, T> {
     private final R first;
     private final S second;
     private final T third;
 
-    public Triplet(R first, S second, T third) {
+    public Triple(R first, S second, T third) {
         this.first = first;
         this.second = second;
         this.third = third;
@@ -29,8 +29,8 @@ public class Triplet<R, S, T> {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Triplet<?, ?, ?> triplet = (Triplet<?, ?, ?>) o;
-        return Objects.equals(first, triplet.first) && Objects.equals(second, triplet.second) && Objects.equals(third, triplet.third);
+        Triple<?, ?, ?> triple = (Triple<?, ?, ?>) o;
+        return Objects.equals(first, triple.first) && Objects.equals(second, triple.second) && Objects.equals(third, triple.third);
     }
 
     @Override

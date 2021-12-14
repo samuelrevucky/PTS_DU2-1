@@ -7,7 +7,7 @@ import datatypes.TimeDiff;
 import interfaces.LineSegmentInterface;
 import interfaces.StopInterface;
 import tuples.Pair;
-import tuples.Triplet;
+import tuples.Triple;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -41,12 +41,12 @@ public class LineSegment implements LineSegmentInterface {
     }
 
     @Override
-    public Triplet<Time, StopName, Boolean> nextStopAndUpdateReachable(Time startTime) {
+    public Triple<Time, StopName, Boolean> nextStopAndUpdateReachable(Time startTime) {
         // TODO: Add checks
         Time time = new Time(startTime.getSeconds() + timeToNextStop.getDiff());
         boolean hasCapacity = numberOfPassengers.get(startTime) < capacity;
         if (hasCapacity) nextStop.updateReachableAt(time, lineName);
-        return new Triplet<>(time, nextStop.getName(), hasCapacity);
+        return new Triple<>(time, nextStop.getName(), hasCapacity);
     }
 
     @Override

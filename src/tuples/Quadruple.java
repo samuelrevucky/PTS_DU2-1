@@ -1,0 +1,40 @@
+//package tuples;
+//
+//import java.util.Objects;
+//
+//public class Quadruple<R, S, T> {
+//    private final R first;
+//    private final S second;
+//    private final T third;
+//
+//    public Triple(R first, S second, T third) {
+//        this.first = first;
+//        this.second = second;
+//        this.third = third;
+//    }
+//
+//    public R getFirst() {
+//        return first;
+//    }
+//
+//    public S getSecond() {
+//        return second;
+//    }
+//
+//    public T getThird() {
+//        return third;
+//    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (o == null || getClass() != o.getClass()) return false;
+//        Triple<?, ?, ?> triple = (Triple<?, ?, ?>) o;
+//        return Objects.equals(first, triple.first) && Objects.equals(second, triple.second) && Objects.equals(third, triple.third);
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(first, second, third);
+//    }
+//}
