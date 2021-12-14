@@ -3,7 +3,10 @@ package factories;
 import datatypes.LineName;
 import datatypes.StopName;
 import datatypes.Time;
-import interfaces.*;
+import interfaces.FactoryInterface;
+import interfaces.LineInterface;
+import interfaces.LineSegmentInterface;
+import interfaces.StopInterface;
 import main.Stop;
 
 import java.util.List;
@@ -12,6 +15,8 @@ import java.util.Optional;
 
 public class InMemoryFactory implements FactoryInterface {
     private final Map<StopName, List<LineName>> stopLines;
+//    private final Map<LineName, Pair<List<Time>, StopName>> lines;
+//    private final Map<LineName, Pair<StopName, >> lineSegments;
 
     public InMemoryFactory(Map<StopName, List<LineName>> stopLines) {
         this.stopLines = stopLines;
